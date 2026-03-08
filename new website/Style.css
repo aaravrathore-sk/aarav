@@ -1,0 +1,341 @@
+/* --- Updated Font Rules --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Body ke liye clean font */
+}
+
+/* Logo, Headings aur Titles ke liye Royal Font */
+header .logo, h1, h2, h3, .price-details .highlight {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Logo ko aur premium banane ke liye thodi styling */
+header .logo {
+    font-size: 32px; /* Thoda bada kiya hai */
+    font-weight: 700;
+    color: var(--royal-gold);
+    letter-spacing: 2px;
+    font-style: italic; /* Luxury feel ke liye */
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.rooms-section h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+/* --- Royal Color Variables --- */
+:root {
+    --royal-navy: #112236;  /* Deep elegant blue */
+    --royal-gold: #D4AF37;  /* Metallic gold */
+    --gold-hover: #B5952F;  /* Darker gold for hover */
+    --bg-cream: #FCFAF8;    /* Very light pearl/cream */
+    --text-main: #333333;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-main);
+}
+
+/* Navbar - Royal Look */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: var(--royal-navy);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--royal-gold); /* Gold Logo */
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--royal-gold);
+}
+
+/* Hero Section */
+.hero {
+    height: 65vh;
+    /* Added a slightly darker overlay so the gold button pops out */
+    background: linear-gradient(rgba(17, 34, 54, 0.7), rgba(17, 34, 54, 0.7)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Royal Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--royal-gold);
+    color: var(--royal-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: var(--gold-hover);
+    color: white;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Rooms Section */
+.rooms-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.rooms-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--royal-navy);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.room-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--royal-gold); /* Gold border on hover */
+    box-shadow: 0 20px 40px rgba(17, 34, 54, 0.1);
+}
+
+.room-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 25px;
+}
+
+.room-info h3 {
+    margin-bottom: 10px;
+    color: var(--royal-navy);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.room-info p {
+    color: var(--royal-gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Modal Style */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(17, 34, 54, 0.85); /* Dark navy overlay instead of pure black */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--bg-cream);
+    width: 85%;
+    max-width: 900px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--royal-navy);
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: var(--royal-gold);
+}
+
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Image Gallery Styles inside Modal */
+.modal-gallery {
+    flex: 1.2;
+    min-width: 300px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+}
+
+#main-modal-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.thumbnail-container img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail-container img:hover,
+.thumbnail-container img.active {
+    opacity: 1;
+    border-color: var(--royal-gold);
+}
+
+.modal-info {
+    flex: 1;
+    padding: 35px 30px;
+    min-width: 300px;
+}
+
+.modal-info h3 {
+    color: var(--royal-navy);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.price-details {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 25px 0;
+    border-left: 4px solid var(--royal-gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.price-details .highlight {
+    color: var(--royal-navy);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+.price-details .highlight span {
+    color: var(--royal-gold);
+}
+
+/* Booking Form */
+#booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#booking-form input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+#booking-form input:focus {
+    border-color: var(--royal-gold);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 10px;
+}
